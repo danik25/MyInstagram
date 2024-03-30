@@ -1,0 +1,15 @@
+.main-app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    gap: 50px
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    flex-grow: 1;
+}
