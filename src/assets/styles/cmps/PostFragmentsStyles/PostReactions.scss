@@ -1,0 +1,22 @@
+// Icons
+.post-reactions-container {
+    display: flex;
+    justify-content: space-between;
+    
+    font-size: 24px;
+    padding: 0;
+    margin-top: 4px;
+    margin-bottom: 4px;
+
+    cursor: pointer;
+}
+
+.like-comment-send {
+    display: flex;
+    gap: 10px;
+    padding: 0;
+}
+
+.bookmark {
+    padding: 0;
+}

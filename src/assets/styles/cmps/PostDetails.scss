@@ -1,0 +1,35 @@
+.post-details-container {
+    position: absolute;
+    z-index: 999;
+    width: 80%;
+    height: 95%;
+    
+    position: absolute; /* Position component absolutely */
+    top: 50%; /* Move component 50% down from the top */
+    left: 50%; /* Move component 50% from the left */
+    transform: translate(-50%, -50%); /* Center component */
+
+    display: flex;
+}
+
+.post-details-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.post-details-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+}
+.post-details-image {
+    width: 50%;
+    height: 100%;
+    border: solid black;
+}
+
+.post-details-header {
+    border-bottom: 1px solid $gray;
+    margin-bottom: 20px;
+}

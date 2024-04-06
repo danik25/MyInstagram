@@ -13,16 +13,24 @@
 
 
 // Views
-@import "views/MainPage";
-@import "views/HomeIndex";
+@import "views/PostIndex";
 
 // Components
 @import "cmps/AppSideBar";
 @import "cmps/AppFooter";
 @import "cmps/PostList";
+@import "cmps/OpenMenu";
+@import "cmps/PostPreview";
+@import "cmps/PostDetails";
 
+// PostFragmentsStyles
+@import "cmps/PostFragmentsStyles/AddComment";
+@import "cmps/PostFragmentsStyles/PostReactions";
+@import "cmps/PostFragmentsStyles/User";
+@import "cmps/PostFragmentsStyles/LikesCounter";
+@import "cmps/PostFragmentsStyles/PostComment";
 
-
-
+// Reactions
+@import "cmps/PostFragmentsStyles/Reactions/Like";
 
 

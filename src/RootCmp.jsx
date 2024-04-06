@@ -6,10 +6,11 @@ import { store } from "./store/store";
 // CMP
 import { AppSideBar } from "./cmps/AppSideBar";
 import { AppFooter } from "./cmps/AppFooter";
-import { HomeIndex } from "./pages/HomeIndex";
+import { PostIndex } from "./pages/PostIndex";
 import { Explore } from "./pages/explore";
 import { Message } from "./pages/Message";
 import { Profile } from "./pages/Profile";
+import { PostDetails } from "./cmps/PostDetails";
 
 export function RootCmp() {
   return (
@@ -17,13 +18,15 @@ export function RootCmp() {
       <Router>
         <section className="main-app">
           <AppSideBar />
-          <section className="right-section">
-            <main className="main-container">
+          <section className="main-container">
+            <main className="main-content">
               <Routes>
-                <Route path="home" element={<HomeIndex />} />
+                <Route path="home" element={<PostIndex />}>
+                  <Route path="p/:postId" element={<PostDetails />} />
+                </Route>
                 <Route path="explore" element={<Explore />} />
                 <Route path="message" element={<Message />} />
-                <Route path="profile" element={<Profile />} />
+                <Route path=":profile" element={<Profile />} />
               </Routes>
             </main>
             <AppFooter />

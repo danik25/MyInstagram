@@ -1,6 +1,6 @@
-export const ADD_POST = 'ADD_POST'
-export const UPDATE_POST = 'UPDATE_POST'
 export const SET_POSTS = 'SET_POSTS'
+export const ADD_INTERACTION = 'ADD_INTERACTION'
+export const ADD_COMMENT = 'ADD_COMMENT'
 
 const initialState = {
     posts: [],
@@ -16,13 +16,22 @@ export function postReducer(state = initialState, action) {
                 ...state,
                 posts: action.posts
             }
-        case ADD_POST:
-            newState = { ...state, posts: [...state.posts, action.post] }
-            break
-        case UPDATE_POST:
-            posts = state.posts.map(post => (post._id === action.post._id) ? action.post : post)
-            newState = { ...state, posts }
-            break
+        case ADD_INTERACTION:
+            return {
+                ...state,
+                posts: state.posts.map(post => post.id === action.post.id ? action.post : post)
+            }
+        // case ADD_COMMENT:
+        //     return {
+        //         posts: state.posts.map((post) => {
+        //             if (post.id === action.post.id) {
+        //                 post.comments = post.comments.push(action.newComment)
+        //                 return post
+        //             }
+        //             return post
+                    
+        //         })
+        //     }
         default:
     }
     return newState

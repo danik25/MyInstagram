@@ -2,11 +2,13 @@ import { storageService } from "./async-storage.service.js";
 import dummyPosts from "../assets/data/dummyData.json";
 
 import { utilService } from "./util.service.js";
-import { userService } from "./user.service.js";
 
 const POST_STORAGE_KEY = "post";
 
 _createPosts();
+
+// TODO: ADD LOGIN/LOGOUT
+// TODO: look for all of the "getLogged user, and remove the redundant. advise Batel."
 
 export const postService = {
   query,
@@ -30,9 +32,9 @@ async function remove(id) {
 
 async function save(post) {
   if (post.id) {
-    return storageService.put(POST_STORAGE_KEY, car);
+    return storageService.put(POST_STORAGE_KEY, post);
   } else {
-    return storageService.post(POST_STORAGE_KEY, car);
+    return storageService.post(POST_STORAGE_KEY, post);
   }
 }
 

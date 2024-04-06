@@ -1,12 +1,13 @@
 {
   "posts": [
     {
+        "id": "s101",
       "txt": "Best trip ever",
-      "imgUrl": "http://some-img",
+      "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396081/samples/landscapes/nature-mountains.jpg",
       "by": {
-        "_id": "u101",
+        "id": "u101",
         "fullname": "Ulash Ulashi",
-        "imgUrl": "http://some-img"
+        "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396102/cld-sample.jpg"
       },
       "loc": {
         "lat": 11.11,
@@ -17,65 +18,87 @@
         {
           "id": "c1001",
           "by": {
-            "_id": "u105",
+            "id": "u105",
             "fullname": "Bob",
-            "imgUrl": "http://some-img"
+            "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396071/samples/people/kitchen-bar.jpg"
           },
           "txt": "good one!",
           "likedBy": [
             {
-              "_id": "u105",
+              "id": "u105",
               "fullname": "Bob",
-              "imgUrl": "http://some-img"
+              "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396071/samples/people/kitchen-bar.jpg"
             }
           ]
         },
         {
           "id": "c1002",
           "by": {
-            "_id": "u106",
+            "id": "u106",
             "fullname": "Dob",
-            "imgUrl": "http://some-img"
+            "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396095/samples/smile.jpg"
           },
           "txt": "not good!",
           "likedBy": [
             {
-              "_id": "u105",
+              "id": "u105",
               "fullname": "Bob",
-              "imgUrl": "http://some-img"
+              "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396071/samples/people/kitchen-bar.jpg"
             },
             {
-              "_id": "u106",
+              "id": "u106",
               "fullname": "Dob",
-              "imgUrl": "http://some-img"
+              "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396095/samples/smile.jpg"
             }
           ]
         }
       ],
-
-      "tags": ["fun", "kids"],
-      "user": {
-        "_id": "u101",
-        "username": "Muko",
-        "password": "mukmuk",
-        "fullname": "Muki Muka",
-        "imgUrl": "http://some-img",
-        "following": [
+      "likedBy": [
+      ],
+      "tags": ["fun", "kids"]
+    },
+    {
+        "id": "s102",
+        "txt": "Im just an Instagram post!",
+        "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396070/samples/animals/cat.jpg",
+        "by": {
+          "id": "u102",
+          "fullname": "Daniel Danieli",
+          "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396098/samples/man-portrait.jpg"
+        },
+        "loc": {
+          "lat": 11.11,
+          "lng": 22.22,
+          "name": "Tel Aviv"
+        },
+        "comments": [
           {
-            "_id": "u106",
-            "fullname": "Dob",
-            "imgUrl": "http://some-img"
+            "id": "c1001",
+            "by": {
+              "id": "u106",
+              "fullname": "Dob",
+              "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396095/samples/smile.jpg"
+            },
+            "txt": "Im first!",
+            "likedBy": [
+              {
+              }
+            ]
           }
         ],
-        "followers": [
-          {
-            "_id": "u105",
-            "fullname": "Bob",
-            "imgUrl": "http://some-img"
-          }
-        ],
-        "savedStoryIds": ["s104", "s111", "s123"]
+        "likedBy": [
+            {
+              "id": "u105",
+              "fullname": "Bob",
+              "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396071/samples/people/kitchen-bar.jpg"
+            },
+            {
+              "id": "u106",
+              "fullname": "Dob",
+              "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396095/samples/smile.jpg"
+            }
+          ],
+        "tags": ["movies"]
       }
-    }
   ]
 }

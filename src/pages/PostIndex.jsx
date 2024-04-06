@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { loadPosts } from "../store/actions/post.action";
 import { PostList } from "../cmps/PostList";
+import { Outlet } from "react-router";
 
-export function HomeIndex() {
+export function PostIndex() {
   const posts = useSelector((storeState) => storeState.postModule.posts);
 
   useEffect(() => {
     loadPosts();
   }, []);
 
+  console.log("posts (index): ", posts);
   return (
-    <section className="home-index">
-      <h1>Welcome! This is MyInstagram</h1>
+    <div className="home-index">
       <PostList posts={posts} />
-    </section>
+      <Outlet context={{ pageBG: "/home" }} />
+    </div>
   );
 }

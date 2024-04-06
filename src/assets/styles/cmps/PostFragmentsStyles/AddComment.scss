@@ -1,0 +1,27 @@
+.add-comment-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $gray;
+    margin-top: 8px;
+}
+
+.comment {
+    display: flex;
+}
+
+.comment-icon {
+    padding-top: 0.5rem;
+}
+.add-comment-container button {
+    border: none;
+    background-color: transparent;
+    color: $blue;
+    font-family: $font;
+    font-weight: bold;
+
+    
+    text-align: right;
+    cursor: pointer;
+
+}
