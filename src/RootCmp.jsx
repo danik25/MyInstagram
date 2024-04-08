@@ -17,7 +17,7 @@ export function RootCmp() {
     <Provider store={store}>
       <Router>
         <section className="main-app">
-          <AppSideBar />
+          {/* <AppSideBar /> */}
           <section className="main-container">
             <main className="main-content">
               <Routes>
@@ -29,7 +29,7 @@ export function RootCmp() {
                 <Route path=":profile" element={<Profile />} />
               </Routes>
             </main>
-            <AppFooter />
+            {/* <AppFooter /> */}
           </section>
         </section>
       </Router>

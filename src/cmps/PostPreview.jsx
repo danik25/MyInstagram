@@ -24,12 +24,12 @@ export function PostPreview({ post }) {
   const selfCommentTxt = selfComments.map((selfComment) => {
     return (
       <li key={selfComment.id}>
-        <PostComment post={post} comment={ selfComment}/>
+        <PostComment post={post} comment={selfComment} />
       </li>
     );
   });
 
-  console.log("preview")
+  console.log("preview");
   return (
     <article className="post-preview">
       <User user={post.by} isImageDisplay={true} />
@@ -44,10 +44,7 @@ export function PostPreview({ post }) {
 
         <LikesCounter likes={post.likedBy} />
 
-        <div className="post-preview-txt">
-          <div className="name"> {post.by.fullname}</div>
-          {post.txt}
-        </div>
+        <PostComment post={post} comment={{ by: post.by, txt: post.txt }} />
         <div className="comments">
           <button onClick={onCommentClick}>
             View all {post.comments.length} comments

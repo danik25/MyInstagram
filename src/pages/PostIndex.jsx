@@ -12,6 +12,9 @@ export function PostIndex() {
     loadPosts();
   }, []);
 
+  if (!posts.length) {
+    return <div>Loading..</div>;
+  }
   console.log("posts (index): ", posts);
   return (
     <div className="home-index">

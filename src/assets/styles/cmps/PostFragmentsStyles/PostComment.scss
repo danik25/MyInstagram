@@ -1,4 +1,8 @@
-.comment {
-    display: flex;
-    gap: 10px;
+.post-comment-container {
+  display: flex;
+  gap: 10px;
+
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
 }

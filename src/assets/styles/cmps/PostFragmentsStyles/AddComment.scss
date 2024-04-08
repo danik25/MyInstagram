@@ -1,27 +1,30 @@
 .add-comment-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: $gray;
-    margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $gray;
+  margin-top: 8px;
+  padding-bottom: 12px;
+
+  input {
+    border: none;
+  }
 }
 
 .comment {
-    display: flex;
+  display: flex;
 }
 
 .comment-icon {
-    padding-top: 0.5rem;
+  padding-top: 0.5rem;
 }
 .add-comment-container button {
-    border: none;
-    background-color: transparent;
-    color: $blue;
-    font-family: $font;
-    font-weight: bold;
+  border: none;
+  background-color: transparent;
+  color: $blue;
+  font-family: $font;
+  font-weight: bold;
 
-    
-    text-align: right;
-    cursor: pointer;
-
+  text-align: right;
+  cursor: pointer;
 }

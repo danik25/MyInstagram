@@ -12,11 +12,12 @@ export function PostComment({ post, comment, isImageDisplay }) {
 
   useEffect(() => {
     loadComment();
-  }, []);
+  }, [post]);
 
   async function loadComment() {
     const loggedUser = userService.getLoggedUser();
     const isLiked =
+      comment.likedBy &&
       comment.likedBy.filter((likedUser) => likedUser.id === loggedUser.id)
         .length > 0;
 
@@ -25,7 +26,7 @@ export function PostComment({ post, comment, isImageDisplay }) {
 
   async function toggleLikeReaction() {
     setIsLike((prevLike) => !prevLike);
-    
+
     try {
       await toggleCommentLike(post, comment, !isLike);
     } catch (err) {
@@ -34,13 +35,15 @@ export function PostComment({ post, comment, isImageDisplay }) {
   }
 
   return (
-    <div className="comment">
+    <div className="post-comment-container">
       <User
         user={comment.by}
         comment={comment.txt}
         isImageDisplay={isImageDisplay}
       />
-      <Like isLike={isLike} toggleLike={toggleLikeReaction} />
+      {comment.likedBy && (
+        <Like isLike={isLike} toggleLike={toggleLikeReaction} />
+      )}
     </div>
   );
 }

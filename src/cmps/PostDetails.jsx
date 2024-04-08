@@ -46,22 +46,34 @@ export function PostDetails() {
 
   return (
     <dialog className="post-details-container" open>
-      <Link to={context.pageBG}>X</Link>
-      <img className="post-details-image" src={post.imgUrl} alt="Post Image" />
-      <div className="post-details-content">
-        <div className="post-details-by-n-comments">
-          <div className="post-details-header">
-            <User user={post.by} isImageDisplay={true} />
-          </div>
-          <section className="post-details-comments">{comments}</section>
+      <section className="post-details-internal">
+        <div className="exit">
+          <Link to={context.pageBG}>X</Link>
         </div>
 
-        <div className="post-details-user-interaction">
-          <PostReactions post={post} />
-          <LikesCounter likes={post.likedBy} />
-          <AddComment post={post} />
+        <img
+          className="post-details-image"
+          src={post.imgUrl}
+          alt="Post Image"
+        />
+        <div className="post-details-content">
+          <div className="post-details-by-n-comments">
+            <div className="post-details-header">
+              <User user={post.by} isImageDisplay={true} />
+            </div>
+            <section className="post-details-comments">{comments}</section>
+          </div>
+
+          <div className="post-details-user-interaction">
+            <PostReactions post={post} />
+            <div className="details-counter">
+              <LikesCounter likes={post.likedBy} />
+            </div>
+
+            <AddComment post={post} />
+          </div>
         </div>
-      </div>
+      </section>
     </dialog>
   );
 }

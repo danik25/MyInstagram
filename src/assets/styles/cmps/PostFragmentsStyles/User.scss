@@ -1,11 +1,19 @@
 .user-container {
-    display: flex;
-    gap: 10px;
-}
+  display: flex;
+  gap: 10px;
+  font-weight: bold;
+  align-items: center;
 
-.user-image {
+  font-size: 14px;
+
+  .user-image {
     height: 32px;
     width: 32px;
     object-fit: cover;
     border-radius: 50%;
+  }
+
+  .user-comment {
+    font-weight: lighter;
+  }
 }

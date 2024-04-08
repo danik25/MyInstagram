@@ -2,8 +2,8 @@ import { store } from "../store.js";
 
 import {
   SET_POSTS,
-    ADD_INTERACTION,
-    ADD_COMMENT // TODO: for granular interaction
+  ADD_INTERACTION,
+  ADD_COMMENT, // TODO: for granular interaction
 } from "../reducers/post.reducer";
 
 // Services
@@ -11,17 +11,13 @@ import { postService } from "../../services/post.service";
 import { userService } from "../../services/user.service.js";
 import { utilService } from "../../services/util.service.js";
 
-
-// TODO: when I like a post or a comment, the icon in the index is not getting updated
-// TODO: advise Batel regarding all the small CMPS
-
 export async function addComment(post, commentContent) {
-    const newComment = {
-        id: utilService.makeId(),
-        by: userService.getLoggedUser(),
-        txt: commentContent,
-        likedBy: []
-    }
+  const newComment = {
+    id: utilService.makeId(),
+    by: userService.getLoggedUser(),
+    txt: commentContent,
+    likedBy: [],
+  };
 
   post.comments.push(newComment);
   try {
@@ -33,56 +29,56 @@ export async function addComment(post, commentContent) {
   }
 }
 
-
 export async function toggleCommentLike(post, comment, isLike) {
-    const loggedUser = userService.getLoggedUser()
+  const loggedUser = userService.getLoggedUser();
+  const commentIndex = post.comments.findIndex((postComment) => {
+    return postComment.id === comment.id;
+  });
 
-    const postComments = post.comments
-    const commentIndex = postComments.findIndex((postComment) => {
-        return postComment.id === comment.id
-    })
+  if (isLike) {
+    post.comments[commentIndex].likedBy.push(loggedUser);
+    // currentComment.likedBy.push(loggedUser);
+  } else {
+    const newLikeArray = post.comments[commentIndex].likedBy.filter(
+      (likeUser) => likeUser.id !== loggedUser.id
+    );
+    post.comments[commentIndex].likedBy = newLikeArray;
+  }
 
-    if (isLike) {
-        postComments[commentIndex].likedBy.push(loggedUser)
-        // currentComment.likedBy.push(loggedUser);
-    } else {
-        const newLikeArray = postComments[commentIndex].likedBy.filter(likeUser => likeUser.id !== loggedUser.id);
-        postComments[commentIndex].likedBy = newLikeArray
-    }
-
-
-    try {
-        const updatedPost = await postService.save({ ...post, comments: postComments });
-  
-        store.dispatch({ type: ADD_INTERACTION, post: updatedPost });
-      } catch (err) {
-        console.log("Couldn't update post, ", err);
-      }
-
+  console.log("post: ", post);
+  try {
+    const updatedPost = await postService.save(post);
+    console.log("updatedPost: ", updatedPost);
+    store.dispatch({ type: ADD_INTERACTION, post: updatedPost });
+  } catch (err) {
+    console.log("Couldn't update post, ", err);
+  }
 }
 
 export async function togglePostLike(post, isLike) {
-    // const post = await postService.getById(postId);
-    // if (!post) {
-    //   console.log("Can't find post");
-    // }
-  
-    const loggedUser = userService.getLoggedUser()
-    // Adding the new comment, to the post
-    if (isLike) {
-        post.likedBy.push(loggedUser);
-    } else {
-        const newLikeArray = post.likedBy.filter(likeUser => likeUser.id !== loggedUser.id);
-        post.likedBy = newLikeArray
-    }
-    
-    try {
-      const newPost = await postService.save(post);
+  // const post = await postService.getById(postId);
+  // if (!post) {
+  //   console.log("Can't find post");
+  // }
 
-      store.dispatch({ type: ADD_INTERACTION, post: newPost });
-    } catch (err) {
-      console.log("Couldn't update post, ", err);
-    }
+  const loggedUser = userService.getLoggedUser();
+  // Adding the new comment, to the post
+  if (isLike) {
+    post.likedBy.push(loggedUser);
+  } else {
+    const newLikeArray = post.likedBy.filter(
+      (likeUser) => likeUser.id !== loggedUser.id
+    );
+    post.likedBy = newLikeArray;
+  }
+
+  try {
+    const newPost = await postService.save(post);
+
+    store.dispatch({ type: ADD_INTERACTION, post: newPost });
+  } catch (err) {
+    console.log("Couldn't update post, ", err);
+  }
 }
 
 export async function loadPosts() {
@@ -107,4 +103,3 @@ export async function addPost(post) {
   //     throw err
   // }
 }
-

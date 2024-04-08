@@ -1,44 +1,45 @@
 .post-preview {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-    
-    font-size: 14px;
-    width: 470px;
-    border-bottom: 1px solid $gray;
+  font-size: 14px;
+  width: 470px;
+  border-bottom: $border-bottom;
 
-    border: 0.5px solid $gray;
+  .comments {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 
+  button {
+    color: $gray;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 }
-
-
 
 .post-preview * {
-    padding-left: 0;
-    font-family: $font;
+  padding-left: 0;
+  font-family: $font;
 }
 
-
 .post-preview-post-image {
-    border: 0.5px solid $gray;
-    border-radius: 5px;
+  border: 0.5px solid $gray;
+  border-radius: 3px;
 }
 
 .post-preview-content {
-    display: flex;
-    flex-direction: column;
-    margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
 }
 
 .post-preview-txt {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .name {
-    font-weight: bold;
-}
-
-.comments {
-    margin-top: 8px;
+  font-weight: bold;
 }
