@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 100px;
-    margin-left: 450px;
+    justify-content: center;
 
     @include for-narrow-layout {
         grid-template-columns: 
@@ -45,7 +45,8 @@
     display: flex;
     width: 100vw;
     height: 100vh;
-    gap: 390px
+    gap: 390px;
+    justify-content: center;
 }
 
 .main-content {
