@@ -17,7 +17,7 @@ export function PostIndex() {
   }
   console.log("posts (index): ", posts);
   return (
-    <div className="home-index">
+    <div className="post-index">
       <PostList posts={posts} />
       <Outlet context={{ pageBG: "/home" }} />
     </div>

@@ -32,7 +32,7 @@ export function PostDetails() {
     setPost(currentPost);
   }
   if (!post) {
-    return <div>"loading..."</div>;
+    return <div></div>;
   }
 
   const comments = post.comments.map((comment) => {
