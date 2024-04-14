@@ -1,8 +1,7 @@
-import { FaRegHeart } from "react-icons/fa"; // Empty heart
-import { FaHeart } from "react-icons/fa6"; // Full heart
-
 // import 'animate.css';
 // import { useState } from "react";
+import EmptyLikeIcon from "../../../assets/svg/empty-heart.svg";
+import FullLikeIcon from "../../../assets/svg/full-heart.svg";
 
 export function Like({ isLike, toggleLike }) {
   // const [isAnimating, setIsAnimating] = useState(false);
@@ -15,15 +14,15 @@ export function Like({ isLike, toggleLike }) {
   //   setIsAnimating(false); // Change 1000 to match the animation duration
   // }
 
-  const likedIcon = isLike ? <FaHeart /> : <FaRegHeart />;
-  const likeClass = isLike ? "clicked" : "";
-
+  // TODO: add animation?
   // const animateClass = isAnimating ? 'animate__animated animate__bounce' : ''
+
+  const likeIcon = isLike ? FullLikeIcon : EmptyLikeIcon;
 
   return (
     <div className="like-container">
-      <button className={`${likeClass}`} onClick={toggleLike}>
-        {likedIcon}
+      <button onClick={toggleLike}>
+        <img src={likeIcon} alt="Like" />
       </button>
     </div>
   );

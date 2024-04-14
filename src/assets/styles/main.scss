@@ -22,11 +22,14 @@
 @import "cmps/OpenMenu";
 @import "cmps/PostPreview";
 @import "cmps/PostDetails";
+@import "cmps/CommentAction";
 
 // PostFragmentsStyles
 @import "cmps/PostFragmentsStyles/AddComment";
 @import "cmps/PostFragmentsStyles/PostReactions";
 @import "cmps/PostFragmentsStyles/User";
+@import "cmps/PostFragmentsStyles/PostBy";
+@import "cmps/PostFragmentsStyles/UserImage";
 @import "cmps/PostFragmentsStyles/LikesCounter";
 @import "cmps/PostFragmentsStyles/PostComment";
 

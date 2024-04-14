@@ -1,9 +1,7 @@
 .post-preview {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-
-  font-size: 14px;
+  font-size: $font-size;
   width: 470px;
   border-bottom: $border-bottom;
 
@@ -26,7 +24,6 @@
 }
 
 .post-preview-post-image {
-  border: 0.5px solid $gray;
   border-radius: 3px;
 }
 

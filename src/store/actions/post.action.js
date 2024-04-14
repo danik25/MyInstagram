@@ -17,6 +17,7 @@ export async function addComment(post, commentContent) {
     by: userService.getLoggedUser(),
     txt: commentContent,
     likedBy: [],
+    time: Date.now()
   };
 
   post.comments.push(newComment);
@@ -37,7 +38,6 @@ export async function toggleCommentLike(post, comment, isLike) {
 
   if (isLike) {
     post.comments[commentIndex].likedBy.push(loggedUser);
-    // currentComment.likedBy.push(loggedUser);
   } else {
     const newLikeArray = post.comments[commentIndex].likedBy.filter(
       (likeUser) => likeUser.id !== loggedUser.id
@@ -56,13 +56,8 @@ export async function toggleCommentLike(post, comment, isLike) {
 }
 
 export async function togglePostLike(post, isLike) {
-  // const post = await postService.getById(postId);
-  // if (!post) {
-  //   console.log("Can't find post");
-  // }
 
   const loggedUser = userService.getLoggedUser();
-  // Adding the new comment, to the post
   if (isLike) {
     post.likedBy.push(loggedUser);
   } else {
@@ -91,15 +86,31 @@ export async function loadPosts() {
   }
 }
 
+export async function actionOnComment(post, comment) {
+  const loggedUser = userService.getLoggedUser()
+
+  if (comment.by.id === loggedUser.id) {
+    await deleteComment(post, comment)
+  } else {
+    reportComment()
+  }
+}
+
+export function reportComment() {
+  console.log("Report!") // TODO: create report comment.
+}
+
+export async function deleteComment(post, commentToRemove) {
+  const newCommentArray = post.comments.filter((comment) => comment.id != commentToRemove.id)
+
+  try {
+    const newPost = await postService.save({ ...post, comments:  newCommentArray});
+
+    store.dispatch({ type: ADD_INTERACTION, post: newPost });
+  } catch (err) {
+    console.log("Couldn't remove comment, ", err);
+  }
+  
+}
 export async function addPost(post) {
-  // try {
-  //     const addedReview = await postService.add(post)
-  //     store.dispatch(getActionAddReview(addedReview))
-  //     const { score } = addedReview.byUser
-  //     userService.updateLocalUserFields({ score })
-  //     store.dispatch({ type: SET_SCORE, score })
-  // } catch (err) {
-  //     console.log('ReviewActions: err in addReview', err)
-  //     throw err
-  // }
 }

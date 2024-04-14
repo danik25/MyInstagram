@@ -1,7 +1,8 @@
-import { FaRegComment } from "react-icons/fa"; // Comment
-import { LuSend } from "react-icons/lu"; // Send
-import { FaRegBookmark } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+
+import CommentIcon from "../../assets/svg/comment.svg";
+import ShareIcon from "../../assets/svg/share.svg";
+import BookMarkIcon from "../../assets/svg/bookmark.svg";
 
 import { togglePostLike } from "../../store/actions/post.action";
 import { userService } from "../../services/user.service";
@@ -15,7 +16,7 @@ export function PostReactions({ post, onCommentClick }) {
 
   useEffect(() => {
     loadPostReactions();
-  }, []);
+  }, [post]);
 
   async function toggleReactionsLike() {
     setIsPostLikedByMe((prevLike) => !prevLike);
@@ -41,15 +42,15 @@ export function PostReactions({ post, onCommentClick }) {
       <div className="like-comment-send">
         <Like isLike={isPostLikedByMe} toggleLike={toggleReactionsLike} />
         <button onClick={() => onCommentClick()}>
-          <FaRegComment />
+          <img src={CommentIcon} alt="Comment" />
         </button>
         <button className="share">
-          <LuSend />
+          <img src={ShareIcon} alt="Share" />
         </button>
       </div>
 
       <button className="bookmark">
-        <FaRegBookmark />
+        <img src={BookMarkIcon} alt="Bookmark" />
       </button>
     </div>
   );

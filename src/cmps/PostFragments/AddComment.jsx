@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { addComment } from "../../store/actions/post.action";
 
-import { GoSmiley } from "react-icons/go";
+
+import SmileyIcon from "../../assets/svg/smiley.svg";
 
 export function AddComment({ post }) {
   const [comment, setComment] = useState("");
@@ -38,7 +39,7 @@ export function AddComment({ post }) {
       </form>
 
       <div className="comment-icon">
-        <GoSmiley />
+      <img src={SmileyIcon} alt="Smiley" />
       </div>
     </div>
   );

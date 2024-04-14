@@ -1,0 +1,25 @@
+.post-by-container {
+    display: flex;
+    align-items: center;
+    font-family: $font-bold;
+  
+    font-size: $font-size;
+    font-weight: 600;
+
+    margin: 0 0 12px 4px;
+  
+    .post-time {
+        display: flex;
+        align-items: center;
+        color: $gray;
+        font-weight: lighter;
+    }
+    .user-name {
+        color: $black;
+        font-weight: bolder;
+    }
+    .user-comment {
+      font-weight: lighter;
+    }
+  }
+  

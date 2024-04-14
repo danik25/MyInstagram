@@ -6,4 +6,45 @@
   align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
+
+  font-family: $font;
+  font-size: $font-size;
+
+  img {
+    width: 12px;
+    height: 12px;
+  }
+  .comment-n-image {
+    display: flex;
+    .comment-n-information {
+      .user-n-comment {
+        display: flex;
+        gap: 2px;
+
+        .comment-by {
+          font-weight: 1000;
+          color: $black;
+          margin-right: 4px;
+        }
+      }
+
+      .comment-information {
+        color: $gray;
+        display: flex;
+        gap: 12px;
+
+        .three-dots {
+          display: none; 
+        }
+        
+        &:hover .three-dots {
+          display: inline-block; 
+          border: none;
+          background-color: transparent;
+          margin-top: 6px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

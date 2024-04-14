@@ -4,9 +4,10 @@
         "id": "s101",
       "txt": "Best trip ever",
       "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396081/samples/landscapes/nature-mountains.jpg",
+      "time": "2024-04-12T08:30:00",
       "by": {
         "id": "u101",
-        "fullname": "Ulash_ulashi",
+        "fullname": "Avi_Avi",
         "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396102/cld-sample.jpg"
       },
       "loc": {
@@ -29,7 +30,8 @@
               "fullname": "Bob_bobi",
               "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396071/samples/people/kitchen-bar.jpg"
             }
-          ]
+          ],
+          "time": "2024-04-14T08:45:00"
         },
         {
           "id": "c1002",
@@ -50,7 +52,8 @@
               "fullname": "Dob_dobi",
               "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396095/samples/smile.jpg"
             }
-          ]
+          ],
+          "time": "2024-04-12T08:50:00"
         }
       ],
       "likedBy": [
@@ -60,12 +63,13 @@
     {
         "id": "s102",
         "txt": "Im just an Instagram post!",
-        "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396070/samples/animals/cat.jpg",
+        "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712676667/WhatsApp_Image_2024-04-09_at_18.30.07_bw4u7x.jpg",
         "by": {
           "id": "u102",
           "fullname": "Daniel_Danieli",
           "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396098/samples/man-portrait.jpg"
         },
+        "time": "2024-03-12T09:30:00",
         "loc": {
           "lat": 11.11,
           "lng": 22.22,
@@ -83,7 +87,8 @@
             "likedBy": [
               {
               }
-            ]
+            ],
+            "time": "2024-03-12T11:00:00"
           }
         ],
         "likedBy": [
@@ -109,6 +114,7 @@
         "fullname": "Israel_israeli",
         "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396077/samples/people/bicycle.jpg"
       },
+      "time": "2024-02-12T12:00:00",
       "loc": {
         "lat": 11.11,
         "lng": 22.22,
@@ -129,7 +135,8 @@
                 "fullname": "Dob_bobi",
                 "imgUrl": "https://res.cloudinary.com/dcn4woh8e/image/upload/v1712396095/samples/smile.jpg"
               }
-          ]
+          ],
+          "time": "2024-02-12T13:00:00"
         }
       ],
       "likedBy": [

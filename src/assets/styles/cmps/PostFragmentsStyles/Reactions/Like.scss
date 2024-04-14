@@ -4,10 +4,15 @@
 
     border: none;
     background-color: transparent;
-    padding: 0;
 
     &.clicked {
       color: $red;
+    }
+
+    cursor: pointer;
+
+    &:hover {
+      color: $gray;
     }
 
     animation: bounce; /* referring directly to the animation's @keyframe declaration */
